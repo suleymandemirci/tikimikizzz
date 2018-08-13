@@ -1,0 +1,33 @@
+const chalk = require('chalk');
+const moment = require('moment');
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+
+var prefix = ayarlar.prefix;
+
+module.exports = client => {
+console.log('Oynuyor kısmı başarıyla güncellendi.');
+console.log('Bot hazır ve giriş yaptı.');
+
+    var Games = [
+
+        "s-yardım",
+        "s-yardım Yeni komutlar yakında",
+        "V1.0 Sürümüne Geçildi",
+        "Geliştirici aranır ",
+        `s-yardım ${client.guilds.size} sunucu | ${client.users.size} | kullanıcı`,
+        `${client.guilds.size} sunucu | ${client.users.size} | kullanıcı`,
+        `${client.guilds.size} sunucu`,
+        `${client.users.size} kullanıcı`,
+        "Bota Geliştirici alınacaktır ulaşım: ! Yusuf#5144",
+    ];
+
+    setInterval(function() {
+
+        var random = Math.floor(Math.random()*(Games.length-0+1)+0);
+
+        client.user.setGame(Games[random], "https://www.twitch.tv/crex");
+        }, 2 * 2500);
+
+};
+
